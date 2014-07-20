@@ -1,3 +1,3 @@
 'use strict';
 
-var simpleApp = angular.module('simpleApp', ['ngResource', 'ngRoute', ]);
+var simpleApp = angular.module('simpleApp', []);

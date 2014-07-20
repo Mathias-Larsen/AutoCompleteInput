@@ -1,36 +1,49 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="simpleApp">
 <head>
   <meta charset="utf-8">
   <title>Autocomplete test</title>
-  <link rel="stylesheet" href="styles/css/app.css">
   <link rel="stylesheet" href="styles/css/bootstrap.css">
-  <link rel="stylesheet" href="styles/css/animations.css">
 
-  <script src="lib/jquery/jquery-1.10.2.js"></script>
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-animate.js"></script>
-  <script src="lib/angular/angular-resource.js"></script>
-  <script src="lib/angular/angular-route.js"></script>
+  <script src="lib/angular.min.js"></script>
 
-  <script src="js/app.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/services.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/autoCompleteCtrl.js"></script>
+  <script src="scripts/services.js"></script>
+  <script src="scripts/directives.js"></script>
 </head>
 <body>
 
+<div class="container"></div>
 
-    
-    <button class="btn btn-primary">Hello world!!</button><br/><br/>
-    <button class="btn btn-primary">Call me maybe <span class="glyphicon glyphicon-phone"></span></button>
+<div class="container">
 
-    <textarea
+    <div class="row">
+        <img src="images/download.jpg" class="img-circle">
+
+        <h2>Cool image.. huh?</h2>
+    </div>
+
+    <br/><br/>
+    <!--
+    <div class="row">
+        <button class="btn btn-primary">Hello world!!</button><br/><br/>
+        <button class="btn btn-primary">Call me maybe <span class="glyphicon glyphicon-phone"></span></button><br/><br/>
+    </div>
+    -->
 
 
-  <div class="view-container">
+
+    <div class="col-md-5" ng-controller="AutoCompleteCtrl">
+        <textarea auto-complete ui-items="injuryCodes" class="form-control" rows="4" placeholder="Type some text here" ng-model="selected"></textarea>
+        selected = {{selected}}
+    </div>
+</div>
+
+
+  <!--<div class="view-container">
     <div ng-view class="view-frame"></div>
-  </div>
+  </div>-->
 
 </body>
 </html>
